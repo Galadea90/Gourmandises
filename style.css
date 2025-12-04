@@ -1,0 +1,589 @@
+/* ==============================
+   HEADER
+   ============================== */
+
+   
+header {
+    height: 650px;
+    background-size: cover;
+    background-image: url(Photos/lunettes.jpg);
+    background-position: center;
+    color: rgb(177, 69, 114);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    background-color: #ffd6eb;
+    /* rose un peu plus soutenu que le body */
+    padding: 20px 0;
+       align-items: center;
+    text-align: center
+   
+
+}
+
+/* Header des autres pages */
+body:not(.home) header {
+    height: 300px;
+    background-image: url(Photos/glitter.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #4a4a4a;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px 0;
+    /* padding général */
+
+}
+
+
+
+
+/* ==============================
+   Header H1
+   ============================== */
+header h1 {
+    font-family: 'Sniglet', cursive;
+    font-weight: 700;
+    font-size: 7rem;
+    color: #ffffffe7;
+    text-shadow:
+        0 0 10px rgba(255, 70, 120, 0.8),
+        0 0 20px rgba(255, 0, 80, 0.6);
+    letter-spacing: 1px;
+    /* text-transform: uppercase;       /* majuscules */
+    margin: 0;
+    cursor: default;
+    transition: transform 0.3s ease;
+    animation: pop 0.6s ease-out forwards;
+}
+
+/* Animation "pop" du titre */
+
+@keyframes pop {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+header h1:hover {
+    transform: scale(1.05);
+}
+
+
+header nav {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+}
+
+body header nav ul {
+
+    padding: 20px 0;
+    background-color: rgba(255, 204, 233, 0.7);
+    /* barre rose translucide */
+
+}
+
+
+main {
+    margin-top: 100px;
+}
+
+.btn {
+   
+    color: white !important;
+    border: none;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+    background-color: #ff5eaf;
+  
+
+}
+
+/* --- Navigation sous le titre --- */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+
+/* ==============================
+   CARROUSEL
+   ============================== */
+/* ---- CONTENEUR PRINCIPAL ---- */
+#carouselGourmandises {
+    width: 100%;
+    max-width: 1200px;
+    /* grand carrousel moderne */
+    margin: 40px auto;
+    padding: 0 10px;
+}
+
+/* ---- CADRE DES SLIDES ---- */
+#carouselGourmandises .carousel-inner {
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #fff0fa;
+    /* rose très clair */
+    padding: 0;
+    box-shadow: 0 8px 25px rgba(255, 80, 150, 0.25);
+}
+
+/* ---- IMAGES ---- */
+#carouselGourmandises .carousel-inner img {
+    width: 100%;
+    height: 800px;
+    /* belle hauteur maîtrisée */
+    object-fit: cover;
+    /* remplissage harmonieux */
+    display: block;
+    border-radius: 20px;
+}
+
+/* Effet zoom sur l’image active */
+.carousel-img {
+    transition: transform 1.2s ease-in-out;
+}
+
+.carousel-item.active .carousel-img {
+    transform: scale(1.05);
+}
+
+/* ---- BOUTONS PREV / NEXT ---- */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(50%) sepia(100%) saturate(500%) hue-rotate(300deg);
+    width: 45px;
+    height: 45px;
+}
+
+/* Plus de surface cliquable autour des flèches */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 8%;
+}
+
+/* ---- INDICATEURS ---- */
+.carousel-indicators {
+    bottom: -40px;
+}
+
+.carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #d63384;
+    /* rose foncé */
+    opacity: 0.8;
+}
+
+.carousel-indicators .active {
+    background-color: #ff8ed6;
+    /* rose girly */
+    opacity: 1;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 768px) {
+    #carouselGourmandises .carousel-inner img {
+        height: 260px;
+    }
+}
+
+
+
+/* ==============================
+   ARTICLES
+   ============================== */
+.article-gateau-section {
+    background-color: #fff0fa;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.article-gateau {
+    background-color: #fff0fa;
+    border: 2px solid #f7cce6;
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.article-gateau:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(255, 145, 200, 0.3);
+}
+
+.article-gateau h2 {
+    color: #d63384;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.article-gateau p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #4a4a4a;
+}
+
+.article-gateau-section img {
+    width: 80%;
+    max-width: 500px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-left: auto;
+    display: block;
+}
+
+.article-gateau h2 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #d63384;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.article-gateau p {
+    color: #444;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+
+/* ==============================
+   BLOCS DU BAS
+   ============================== */
+.blocs-gourmands .bloc-gateau {
+    background-color: #fff0fa;
+    border: 2px solid #f7cce6;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
+}
+
+.bloc-gateau:hover {
+    transform: translateY(-8px);
+    background-color: #ffe6f5;
+    box-shadow: 0 10px 20px hwb(330 57% 0% / 0.4);
+}
+
+/* Images rondes style icône */
+.icone-bloc {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #f3a9d3;
+}
+
+/* ==============================
+   FOOTER
+   ============================== */
+footer {
+    background-color: #ffd6eb;
+    padding: 15px 0;
+    text-align: center;
+}
+
+/* ==============================
+   BONBONS FLOTTANTS
+   ============================== */
+.bonbon {
+    position: absolute;
+    background-size: cover;
+    pointer-events: none;
+    z-index: 10;
+    border-radius: 50%;
+    animation-name: fallBonbon;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fallBonbon {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(var(--pageHeight, 100vh)) rotate(var(--rotation, 360deg));
+        opacity: 0.9;
+    }
+}
+
+.footer {
+    background-color: #ffd6eb;
+    color: #4a4a4a;
+    padding: 40px 20px 20px 20px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.footer-section {
+    flex: 1 1 200px;
+    /* largeur minimale et flexible */
+}
+
+.footer-section h4 {
+    color: #d63384;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    color: #4a4a4a;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #d63384;
+}
+
+.social-icons a img {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a img:hover {
+    transform: scale(1.2);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.titre-produits {
+    font-size: 2rem;
+    /* moins imposant */
+    font-weight: 600;
+}
+
+.product-img {
+    width: 100%;
+    height: 220px;
+    /* tu peux ajuster ici */
+    object-fit: cover;
+    /* garde une image nette, recadrée proprement */
+    border-radius: 10px;
+    /* coins arrondis */
+}
+
+.product-img {
+    width: 100%;
+    height: 220px;
+    /* tu peux ajuster ici */
+    object-fit: cover;
+    /* garde une image nette, recadrée proprement */
+    border-radius: 10px;
+    /* coins arrondis */
+}
+
+.product-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+
+/* Transition douce, propre et sans vibration */
+.carousel-item {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+}
+
+.carousel-item.active {
+    opacity: 1;
+}
+
+/* Empêcher les vibrations */
+.carousel-inner {
+    overflow: hidden;
+}
+
+.carousel-item img {
+    transition: transform 0.4s ease-in-out;
+}
+
+.carousel-item.active img {
+    transform: translateY(0);
+}
+
+.carousel-item img {
+    transform: translateY(5px);
+    /* très léger, ne vibre pas */
+}
+
+
+/* --- Styles généraux --- */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    background-color: #fff8f0;
+    color: #333;
+}
+
+header,
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: #f7e7dc;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0.5rem 0;
+}
+
+main {
+    padding: 2rem;
+}
+
+
+/* --- Section équipe --- */
+.team-section {
+    text-align: center;
+}
+
+.team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.team-member {
+    background-color: #fff0e5;
+    /* fond pastel gourmand */
+    border-radius: 20px;
+    padding: 1rem;
+    width: 360px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+    background-color: #ffe6d9;
+}
+
+/* --- Photos grandes et rectangulaires --- */
+.team-photo {
+    width: 100%;
+    height: auto;
+    max-height: 320px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+
+
+body {
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+
+/* Style H2 girly pour toutes les pages */
+h2 {
+
+    color: #ff4fa0;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+
+.titre-produits {
+
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ff2e91;
+
+}
+
+/* Empêche les images zoomables d'être étirées automatiquement */
+.zoomable {
+    width: auto !important;
+    height: auto !important;
+    max-width: 100%;
+    /* pour que ça déborde pas */
+    cursor: zoom-in;
+    display: inline-block;
+}
+
+.bonbon {
+    position: absolute;
+    background-size: cover;
+    pointer-events: none;
+    z-index: 10;
+    border-radius: 50%;
+    animation-name: fallBonbon;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fallBonbon {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(var(--pageHeight, 100vh)) rotate(var(--rotation, 360deg));
+        opacity: 0.9;
+    }
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diaporama JS</title>
+    <link rel="stylesheet" href="styleacc2.css">
+
+</head>
+
+<body>
+
+    <!-- Version plus intelligente (à faire fonctionner) :
+
+        - Confort de mise en place d'un point de vue intégration HTML
+            - plus besoin de prévoir d'avance les boutons : JS les génèrera automatiquement
+            - plus besoin de donner la classe "visible" à la première diapo 
+            
+        - Possibilité de faire fonctionner plusieurs diaporama sur une même page
+        NOTE : on ne peut plus utiliser un id "diaporama", c'est maintenant devenu une classe.
+    -->
+
+    <div class="diaporama">
+
+        <div class="diapo">
+            <img src="images/image1.jpg">
+            <div class="contenu_sur_diapo">
+                <h2>Diapositive 1</h2>
+            </div>
+        </div>
+
+        <div class="diapo">
+            <img src="images/image2.jpg">
+            <div class="contenu_sur_diapo">
+                <button>ACHETER !</button>
+            </div>
+        </div>
+
+        <div class="diapo">
+            <img src="images/image3.jpg">
+            <div class="contenu_sur_diapo">
+                <p>Une description ici...</p>
+                <p>Sur plusieurs paragraphes.</p>
+            </div>
+        </div>
+
+        <div class="diapo">
+            <img src="images/image4.jpg">
+        </div>
+
+        <div class="diapo">
+            <img src="images/image5.jpg">
+        </div>
+
+    </div>
+
+    <div class="diaporama">
+
+        <div class="diapo">
+            <img src="images/image1.jpg">
+            <div class="contenu_sur_diapo">
+                <h2>Diapositive 1</h2>
+            </div>
+        </div>
+
+        <div class="diapo">
+            <img src="images/image2.jpg">
+            <div class="contenu_sur_diapo">
+                <button>ACHETER !</button>
+            </div>
+        </div>
+
+        <div class="diapo">
+            <img src="images/image3.jpg">
+            <div class="contenu_sur_diapo">
+                <p>Une description ici...</p>
+                <p>Sur plusieurs paragraphes.</p>
+            </div>
+        </div>
+
+        <div class="diapo">
+            <img src="images/image4.jpg">
+        </div>
+
+        <div class="diapo">
+            <img src="images/image5.jpg">
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+    
+</body>
+
+</html>
