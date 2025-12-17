@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <title>Commandes & Devis - La Fabrique à Gourmandises</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body class="page-creations">
+
+
+
+<header>
+
+    <h2 class="text-center text-pink mb-4 titre-produits">Nos créations à commander</h2>
+
+   <nav>
+    <ul>
+
+          <li>
+            <a href="Accueil.html" class="btn btn-pink btn-lg">Retour à l'accueil</a>
+        </li>
+        <li>
+            <a href="Créations.html" class="btn btn-pink btn-lg">Nos créations</a>
+        </li>
+      
+        <li>
+            <a href="Equipe.html" class="btn btn-pink btn-lg">L'équipe</a>
+                    <li>
+            <a href="Ateliers-événements.html" class="btn btn-pink btn-lg">Ateliers & Evénements</a>
+        </li>
+        </li>
+    </ul>
+</nav>
+</header>
+
+<main class="container">
+
+    <!-- SECTION PRODUITS -->
+    <section class="my-5">
+        
+
+        <div class="row g-4">
+
+            <!-- Produit 1 -->
+            <div class="col-md-4">
+                <div class="product-card p-3 shadow-sm text-center rounded">
+                    <img src="Photos/eclairs2.jpg" class="product-img portrait-img mb-3">
+                    <h3>Eclairs</h3>
+                    <p>Des éclairs colorés et festifs pour illuminer toutes vos fêtes !</p>
+                </div>
+            </div>
+
+            <!-- Produit 2 -->
+            <div class="col-md-4">
+                <div class="product-card p-3 shadow-sm text-center rounded">
+                    <img src="Photos/gateau4.jpg" class="product-img portrait-img mb-3">
+                    <h3>Donuts colorés</h3>
+                    <p>Boîte de 6 donuts girly décorés à la main.</p>
+                </div>
+            </div>
+
+            <!-- Produit 3 -->
+            <div class="col-md-4">
+                <div class="product-card p-3 shadow-sm text-center rounded">
+                    <img src="Photos/birthday.jpg" class="product-img portrait-img mb-3">
+                    <h3>Birthday cake</h3>
+                    <p>Chocolat, vanille ou framboise... Faites votre choix !</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <hr class="my-5">
+
+    <!-- SECTION DEVIS -->
+    <section class="my-5">
+        <h2 class="text-center text-pink mb-4">Demande de devis personnalisé</h2>
+
+        <p class="text-center mb-4">
+            Vous voulez un gâteau unique ? Un cake design ? Des biscuits personnalisés ?  
+            Remplissez ce petit formulaire et nous reviendrons vers vous rapidement.
+        </p>
+
+        <form class="shadow p-4 rounded" id="form-devis">
+
+            <div class="mb-3">
+                <label class="form-label">Votre nom</label>
+                <input type="text" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Votre email</label>
+                <input type="email" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Type de création</label>
+                <select class="form-select" required>
+                    <option value="">Choisir...</option>
+                    <option>Gâteau personnalisé</option>
+                    <option>Donuts personnalisés</option>
+                    <option>Biscuits décorés</option>
+                    <option>Cake design</option>
+                    <option>Wedding cake</option>
+                    <option>Autre demande</option>
+            
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Description</label>
+                <textarea class="form-control" rows="4" placeholder="Parlez-nous du thème, couleurs, nombre de parts..." required></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Date souhaitée</label>
+                <input type="date" class="form-control" required>
+            </div>
+
+            <button type="submit" class="btn btn-pink w-100">Envoyer ma demande</button>
+
+        </form>
+    </section>
+
+</main>
+
+  <footer>
+    <p>&copy; 2025 – La Fabrique à Gourmandises</p>
+  </footer>
+
+<script src="script.js"></script>
+</body>
+</html>

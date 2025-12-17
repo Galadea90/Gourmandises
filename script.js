@@ -1,24 +1,24 @@
-// Script dynamique pour La fabrique à gourmandises
-
+// ================================================
+// Script dynamique pour La Fabrique à Gourmandises
+// ================================================
 
 // Message d'accueil dans la console
 console.log("Bienvenue dans La fabrique à gourmandises !");
 
-// Effet smooth sur les liens du menu
+// -----------------------
+// Animation hover menu
+// -----------------------
 const links = document.querySelectorAll('header nav a');
 
 links.forEach(link => {
-    link.addEventListener('mouseover', () => {
-        link.style.transform = 'scale(1.1)';
-    });
-
-    link.addEventListener('mouseout', () => {
-        link.style.transform = 'scale(1)';
-    });
+    link.addEventListener('mouseover', () => link.style.transform = 'scale(1.1)');
+    link.addEventListener('mouseout', () => link.style.transform = 'scale(1)');
 });
 
-// Petit effet fade-in sur les sections du site
-const elements = document.querySelectorAll('main .row');
+// -----------------------
+// Fade-in sections
+// -----------------------
+const sections = document.querySelectorAll('main .row');
 
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -29,15 +29,16 @@ const observer = new IntersectionObserver(entries => {
     });
 });
 
-elements.forEach(el => {
-    el.style.opacity = 0;
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
-    observer.observe(el);
+sections.forEach(sec => {
+    sec.style.opacity = 0;
+    sec.style.transform = 'translateY(30px)';
+    sec.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+    observer.observe(sec);
 });
 
-
-// Animation d’apparition pour les blocs gourmands
+// -----------------------
+// Animation blocs gourmands
+// -----------------------
 const blocs = document.querySelectorAll('.bloc-gateau');
 
 blocs.forEach(bloc => {
@@ -46,7 +47,7 @@ blocs.forEach(bloc => {
     bloc.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
 });
 
-const obsBlocs = new IntersectionObserver(entries => {
+const blocObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.style.opacity = 1;
@@ -55,28 +56,15 @@ const obsBlocs = new IntersectionObserver(entries => {
     });
 });
 
-blocs.forEach(b => obsBlocs.observe(b));
+blocs.forEach(bloc => blocObserver.observe(bloc));
 
-const carouselItems = document.querySelectorAll('#carouselGourmandises .carousel-item');
-
-carouselItems.forEach(item => {
-    item.addEventListener('transitionstart', () => {
-        const img = item.querySelector('img');
-        if(img) img.style.transform = 'scale(1)';
-    });
-    item.addEventListener('transitionend', () => {
-        const img = item.querySelector('img');
-        if(img) img.style.transform = 'scale(1.05)';
-    });
-});
-
-
-
+// -----------------------
+// Effet bonbons qui tombent
+// -----------------------
 function createBonbon() {
     const bonbon = document.createElement('div');
     bonbon.classList.add('bonbon');
 
-    // 7 bonbons différents
     const bonbonsImages = [
         'Photos/19859.png',
         'Photos/192859.png',
@@ -88,55 +76,64 @@ function createBonbon() {
         'Photos/1966.png',
         'Photos/1878.png'
     ];
+
     bonbon.style.backgroundImage = `url(${bonbonsImages[Math.floor(Math.random() * bonbonsImages.length)]})`;
 
-    // Taille aléatoire pour légèreté (40-70px)
-    const size = 60 + Math.random() * 80;
+    const size = 40 + Math.random() * 30; // 40 à 70px
     bonbon.style.width = `${size}px`;
     bonbon.style.height = `${size}px`;
 
-    // Position horizontale aléatoire sur les marges gauche ou droite (10% de la largeur)
     const pageWidth = document.documentElement.clientWidth;
     const sideMargin = pageWidth * 0.1;
     const side = Math.random() < 0.5 ? 'left' : 'right';
     const offset = Math.random() * sideMargin;
     bonbon.style[side] = `${offset}px`;
-    bonbon.style.top = '-80px'; // commence légèrement au-dessus
+    bonbon.style.top = '-80px';
 
-    // Rotation aléatoire pour effet naturel
     bonbon.style.setProperty('--rotation', `${Math.random() * 360}deg`);
-
-    // Hauteur totale de chute
     const pageHeight = document.documentElement.scrollHeight - size; 
     bonbon.style.setProperty('--pageHeight', `${pageHeight}px`);
 
-    // Durée aléatoire pour un rendu léger (6-12s)
-    const duration =  6 + Math.random() * 12;
+    const duration = 6 + Math.random() * 6; // 6-12s
     bonbon.style.animationDuration = `${duration}s`;
 
     document.body.appendChild(bonbon);
 
-    // Ne pas supprimer le bonbon à la fin pour créer le tas
-    // Optionnel : enlever après beaucoup de temps pour performance
     setTimeout(() => {
         if (bonbon.parentNode) bonbon.remove();
-    }, 8000); // 1 minute
+    }, 8000);
 }
 
-// Générer un nouveau bonbon toutes les 600ms
 setInterval(createBonbon, 600);
 
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = lightbox.querySelector('img');
+// -----------------------
+// Modal images
+// -----------------------
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImg");
+const caption = document.getElementById("caption");
+const closeBtn = modal.querySelector(".close");
 
 document.querySelectorAll('.product-img').forEach(img => {
-  img.addEventListener('click', () => {
-    lightbox.style.display = 'flex';
-    lightboxImg.src = img.src;
-  });
+    img.addEventListener('click', () => {
+        modal.style.display = "flex";
+        modalImg.src = img.src;
+        caption.textContent = img.alt || img.title || '';
+    });
 });
 
-lightbox.addEventListener('click', () => {
-  lightbox.style.display = 'none';
-  lightboxImg.src = '';
+closeBtn.addEventListener('click', () => modal.style.display = "none");
+
+modal.addEventListener('click', (e) => {
+    if (e.target === modal) modal.style.display = "none";
+});
+
+// -----------------------
+// Animation hover cards produits
+// -----------------------
+const cards = document.querySelectorAll('.col-md-4');
+
+cards.forEach(card => {
+    card.addEventListener('mouseenter', () => card.style.transform = 'translateY(-10px)');
+    card.addEventListener('mouseleave', () => card.style.transform = 'translateY(0)');
 });

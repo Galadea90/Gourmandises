@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;400;600;700&display=swap"
+    rel="stylesheet">
+
+  <meta charset="UTF-8">
+  <title>L'équipe - La Fabrique à Gourmandises</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;400;600;700&display=swap"
+    rel="stylesheet">
+
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body class="page-creations">
+
+
+  <header>
+
+    <h2 class="text-center text-pink mb-4 titre-produits">L'équipe</h2>
+
+    <nav>
+      <ul>
+
+        <li>
+          <a href="Accueil.html" class="btn btn-pink btn-lg">Retour à l'accueil</a>
+        </li>
+        <li>
+          <a href="Créations.html" class="btn btn-pink btn-lg">Nos créations</a>
+        </li>
+
+        <li>
+          <a href="Equipe.html" class="btn btn-pink btn-lg">L'équipe</a>
+        </li>
+                <li>
+            <a href="Ateliers-événements.html" class="btn btn-pink btn-lg">Ateliers & Evénements</a>
+        </li>
+      </ul>
+    
+    </nav>
+  </header>
+
+  <main>
+    <section class="team-section">
+
+      <!-- Modal -->
+      <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImg">
+        <div id="caption"></div>
+      </div>
+
+      <div class="team-grid">
+
+        <!-- Emma -->
+        <div class="team-member">
+          <img src="Photos/manager2.jpg" alt="Emma" class="product-img">
+          <h3>Emma</h3>
+          <p>Emma façonne les douceurs comme des petits nuages sucrés. Chaque éclat de chocolat et chaque meringue
+            devient un rêve à croquer sous ses mains délicates.</p>
+        </div>
+
+        <!-- Yuki -->
+        <div class="team-member">
+          <img src="Photos/vendeuse.jpg" alt="Yuki" class="product-img">
+          <h3>Yuki</h3>
+          <p>Yuki peint la pâtisserie de mille couleurs et textures. Chaque dessert est un tableau, un voyage gourmand
+            qui émerveille les yeux et titille les papilles.</p>
+        </div>
+
+        <!-- Chloé -->
+        <div class="team-member">
+          <img src="Photos/gouteuse.jpg" alt="Chloé" class="product-img">
+          <h3>Chloé</h3>
+          <p>Chloé est notre petite muse des saveurs. Son regard curieux et son sourire malicieux garantissent que
+            chaque bouchée est un pur bonheur à savourer.</p>
+        </div>
+
+         <!-- Marc -->
+        <div class="team-member">
+          <img src="Photos/livreur.jpg" alt="Marc" class="product-img">
+          <h3>Marc</h3>
+          <p>Marc file à travers les rues comme une brise sucrée, portant nos douceurs avec soin et rapidité. Chaque livraison devient un moment magique, et aucun gâteau ne perd sa délicatesse sous ses mains agiles.</p>
+        </div>
+
+        <!-- Mila -->
+        <div class="team-member">
+          <img src="Photos/manager.jpg" alt="Mila" class="product-img">
+          <h3>Mila</h3>
+          <p>Mila capture la magie de nos créations et la partage avec le monde entier. Entre Instagram, stories et photos parfaites, elle transforme chaque gâteau en rêve numérique, faisant briller notre univers sucré sur la toile.</p>
+        </div>
+
+        <!-- Jess -->
+        <div class="team-member">
+          <img src="Photos/apprentie.jpg" alt="Jess" class="product-img">
+          <h3>Jess</h3>
+          <p>Jess explore le monde des douceurs avec curiosité et enthousiasme. Sous le regard attentif des pâtissières, elle apprend à transformer farine, sucre et chocolat en créations pleines de poésie et de gourmandise.</p>
+        </div>
+
+                <!-- Sofia -->
+        <div class="team-member">
+          <img src="Photos/patissiere.jpg" alt="Sofia" class="product-img">
+          <h3>Sofia</h3>
+          <p>Sofia accueille chaque client avec un sourire lumineux et un petit mot doux. Elle transforme la boutique en un lieu enchanté où chaque pâtisserie semble plus irrésistible encore sous ses conseils avisés.</p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 – La Fabrique à Gourmandises</p>
+  </footer>
+
+  <script src="script.js"></script>
+    <button id="backToTop" title="Retour en haut">↑</button>
+<script>
+  const backToTop = document.getElementById("backToTop");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      backToTop.style.display = "block";
+    } else {
+      backToTop.style.display = "none";
+    }
+  });
+
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>
+
+<script>
+    // Animation légère au survol
+    const members = document.querySelectorAll('.team-member');
+    members.forEach(member => {
+      member.addEventListener('mouseenter', () => {
+        member.style.transform = 'translateY(-10px)';
+      });
+      member.addEventListener('mouseleave', () => {
+        member.style.transform = 'translateY(0)';
+      });
+    });
+  </script>
+ 
+
+  <script>
+    const images = document.querySelectorAll('.team-photo');
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImg');
+    const caption = document.getElementById('caption');
+    const closeBtn = document.getElementsByClassName('close')[0];
+
+    images.forEach(img => {
+      img.onclick = () => {
+        modal.style.display = "block";
+        modalImg.src = img.src;
+        caption.innerHTML = img.alt;
+      }
+    });
+
+    closeBtn.onclick = () => {
+      modal.style.display = "none";
+    }
+
+    // fermer aussi si clic en dehors de l'image
+    modal.onclick = (e) => {
+      if (e.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+
+</html>

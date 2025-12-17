@@ -2,7 +2,7 @@
    HEADER
    ============================== */
 
-   
+
 header {
     height: 500px;
     background-size: cover;
@@ -15,10 +15,8 @@ header {
     position: relative;
     background-color: #ffd6eb;
     padding: 20px 0;
-       align-items: center;
+    align-items: center;
     text-align: center
-   
-
 }
 
 /* Header des autres pages */
@@ -96,14 +94,14 @@ main {
 }
 
 .btn {
-   
+
     color: white !important;
     border: none;
     border-radius: 25px;
     font-weight: 600;
     transition: 0.3s ease-in-out;
     background-color: #ff5eaf;
-  
+
 
 }
 
@@ -379,7 +377,7 @@ footer {
     text-align: center;
     margin-top: 20px;
     font-size: 0.9rem;
-    color: #666; 
+    color: #666;
 }
 
 .titre-produits {
@@ -399,7 +397,7 @@ footer {
     height: 220px;
     object-fit: cover;
     border-radius: 10px;
-  
+
 }
 
 .product-card {
@@ -562,3 +560,288 @@ h2 {
         opacity: 0.9;
     }
 }
+
+/* ==============================
+   Photo zoomable au clic
+   ============================== */
+
+.team-photo {
+    width: 100%;
+    max-width: 300px;
+    /* ajuste selon tes besoins */
+    transition: transform 0.3s ease;
+    /* pour l'effet smooth */
+    cursor: pointer;
+    /* indique que c'est interactif */
+}
+
+.team-photo:hover {
+    transform: scale(1.2);
+    /* zoom au survol */
+    z-index: 10;
+    /* pour passer au-dessus des autres éléments */
+    position: relative;
+}
+
+
+/* Style du modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    /* garde les proportions */
+}
+
+
+
+#caption {
+    text-align: center;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.close {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close:hover {
+    color: #bbb;
+}
+
+/* modal page 3*/
+
+.product-img {
+    transition: transform 0.3s ease;
+}
+
+.product-img:hover {
+    transform: scale(1.1);
+}
+
+/* FAQ */
+
+.faq-question {
+    cursor: pointer;
+    font-weight: bold;
+    padding: 15px 50px;
+    position: relative;
+    color: #ff4fa0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+}
+
+.faq-question::after {
+    content: '+';
+    position: absolute;
+    right: 50px;
+    font-size: 30px;
+    transition: transform 0.3s;
+    
+}
+
+.faq-question.active::after {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+   margin-left: 100px;
+   margin-right: 100px;
+   
+}
+
+.faq-question {
+    cursor: pointer;
+    position: relative;
+}
+
+.faq-question::after {
+    content: '+';
+    position: absolute;
+    right: 20px;
+}
+
+.faq-question.active::after {
+    content: '−';
+}
+
+/* bouton retour en haut*/
+
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  background-color: #e91e63;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  display: none; /* caché au départ */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+#backToTop:hover {
+  transform: scale(1.1);
+  background-color: #d81b60;
+}
+
+/* page Atelier & Evenements */
+
+.planning {
+  margin-top: 40px;
+}
+
+.event-card {
+  display: flex;
+  align-items: center;
+  background: #ffe6f0;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+
+.event-img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.event-content h3 {
+  margin: 0 0 10px;
+  color: #e91e63;
+}
+
+.event-content button {
+  background: #e91e63;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.event-content button:hover {
+  background: #d81b60;
+}
+
+/* boutons réservation Events */
+
+.event-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #fff0f6;
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 25px;
+}
+
+.event-content {
+  flex: 1; /* pousse le bouton complètement à droite */
+}
+
+.btn-reserver {
+  background-color: #ff69b4; /* rose */
+  color: white;
+  padding: 12px 22px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* effet au survol */
+.btn-reserver:hover {
+  background-color: #ff4fa3;
+  transform: scale(1.05);
+}
+ /* page formulaire*/
+
+ h1 {
+  color: #e91e63;
+  text-align: center;
+  margin-bottom: 30px;
+
+}
+
+form {
+  max-width: 750px;
+  margin: 0 auto;
+  background: #ffe6f0;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Labels */
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #e91e63;
+}
+
+/* Champs du formulaire */
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 1px solid #e91e63;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+/* Bouton envoyer */
+button {
+  width: 100%;
+  background-color: #e91e63;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #d81b60;
+}
+
+/* page d'erreur */
+
