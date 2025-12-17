@@ -7,14 +7,13 @@ header {
     height: 500px;
     background-size: cover;
     background-image: url(Photos/lunettes.jpg);
-    background-position: center;
+    background-position: cover;
     color: rgb(177, 69, 114);
     display: flex;
     flex-direction: column;
     justify-content: center;
     position: relative;
     background-color: #ffd6eb;
-    /* rose un peu plus soutenu que le body */
     padding: 20px 0;
        align-items: center;
     text-align: center
@@ -42,11 +41,6 @@ body:not(.home) header {
 }
 
 
-
-
-/* ==============================
-   Header H1
-   ============================== */
 header h1 {
     font-family: 'Sniglet', cursive;
     font-weight: 700;
@@ -63,7 +57,7 @@ header h1 {
     animation: pop 0.6s ease-out forwards;
 }
 
-/* Animation "pop" du titre */
+/* Animation du titre */
 
 @keyframes pop {
     0% {
@@ -92,7 +86,7 @@ body header nav ul {
 
     padding: 20px 0;
     background-color: rgba(255, 204, 233, 0.7);
-    /* barre rose translucide */
+
 
 }
 
@@ -128,11 +122,11 @@ nav ul {
 /* ==============================
    CARROUSEL
    ============================== */
+
 /* ---- CONTENEUR PRINCIPAL ---- */
 #carouselGourmandises {
     width: 100%;
     max-width: 1200px;
-    /* grand carrousel moderne */
     margin: 40px auto;
     padding: 0 10px;
 }
@@ -142,7 +136,6 @@ nav ul {
     border-radius: 20px;
     overflow: hidden;
     background-color: #fff0fa;
-    /* rose très clair */
     padding: 0;
     box-shadow: 0 8px 25px rgba(255, 80, 150, 0.25);
 }
@@ -151,14 +144,11 @@ nav ul {
 #carouselGourmandises .carousel-inner img {
     width: 100%;
     height: 800px;
-    /* belle hauteur maîtrisée */
     object-fit: cover;
-    /* remplissage harmonieux */
     display: block;
     border-radius: 20px;
 }
 
-/* Effet zoom sur l’image active */
 .carousel-img {
     transition: transform 1.2s ease-in-out;
 }
@@ -175,7 +165,6 @@ nav ul {
     height: 45px;
 }
 
-/* Plus de surface cliquable autour des flèches */
 .carousel-control-prev,
 .carousel-control-next {
     width: 8%;
@@ -191,13 +180,11 @@ nav ul {
     height: 12px;
     border-radius: 50%;
     background-color: #d63384;
-    /* rose foncé */
     opacity: 0.8;
 }
 
 .carousel-indicators .active {
     background-color: #ff8ed6;
-    /* rose girly */
     opacity: 1;
 }
 
@@ -274,6 +261,7 @@ nav ul {
 /* ==============================
    BLOCS DU BAS
    ============================== */
+
 .blocs-gourmands .bloc-gateau {
     background-color: #fff0fa;
     border: 2px solid #f7cce6;
@@ -286,7 +274,7 @@ nav ul {
     box-shadow: 0 10px 20px hwb(330 57% 0% / 0.4);
 }
 
-/* Images rondes style icône */
+/* Images rondes icône */
 .icone-bloc {
     width: 120px;
     height: 120px;
@@ -298,6 +286,7 @@ nav ul {
 /* ==============================
    FOOTER
    ============================== */
+
 footer {
     background-color: #ffd6eb;
     padding: 15px 0;
@@ -307,6 +296,7 @@ footer {
 /* ==============================
    BONBONS FLOTTANTS
    ============================== */
+
 .bonbon {
     position: absolute;
     background-size: cover;
@@ -347,7 +337,6 @@ footer {
 
 .footer-section {
     flex: 1 1 200px;
-    /* largeur minimale et flexible */
 }
 
 .footer-section h4 {
@@ -395,28 +384,22 @@ footer {
 
 .titre-produits {
     font-size: 2rem;
-    /* moins imposant */
     font-weight: 600;
 }
 
 .product-img {
     width: 100%;
     height: 220px;
-    /* tu peux ajuster ici */
     object-fit: cover;
-    /* garde une image nette, recadrée proprement */
     border-radius: 10px;
-    /* coins arrondis */
 }
 
 .product-img {
     width: 100%;
     height: 220px;
-    /* tu peux ajuster ici */
     object-fit: cover;
-    /* garde une image nette, recadrée proprement */
     border-radius: 10px;
-    /* coins arrondis */
+  
 }
 
 .product-card {
@@ -427,8 +410,6 @@ footer {
 }
 
 
-
-/* Transition douce, propre et sans vibration */
 .carousel-item {
     transition: opacity 0.5s ease-in-out;
     opacity: 0;
@@ -438,7 +419,6 @@ footer {
     opacity: 1;
 }
 
-/* Empêcher les vibrations */
 .carousel-inner {
     overflow: hidden;
 }
@@ -453,7 +433,6 @@ footer {
 
 .carousel-item img {
     transform: translateY(5px);
-    /* très léger, ne vibre pas */
 }
 
 
@@ -498,7 +477,6 @@ main {
 
 .team-member {
     background-color: #fff0e5;
-    /* fond pastel gourmand */
     border-radius: 20px;
     padding: 1rem;
     width: 360px;
@@ -513,7 +491,6 @@ main {
     background-color: #ffe6d9;
 }
 
-/* --- Photos grandes et rectangulaires --- */
 .team-photo {
     width: 100%;
     height: auto;
@@ -535,7 +512,7 @@ body {
 }
 
 
-/* Style H2 girly pour toutes les pages */
+/* Style H2 pour toutes les pages */
 h2 {
 
     color: #ff4fa0;
@@ -555,12 +532,10 @@ h2 {
 
 }
 
-/* Empêche les images zoomables d'être étirées automatiquement */
 .zoomable {
     width: auto !important;
     height: auto !important;
     max-width: 100%;
-    /* pour que ça déborde pas */
     cursor: zoom-in;
     display: inline-block;
 }
